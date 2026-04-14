@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary - 深いネイビーブルー */
+  --primary: #0F2B4C;
+  --primary-light: #1A3D6B;
+  --primary-dark: #091E36;
+
+  /* Accent - エメラルドグリーン */
+  --accent: #00C09A;
+  --accent-light: #33D4B3;
+  --accent-dark: #009B7D;
+
+  /* Secondary - ウォームイエロー */
+  --warning: #FFEC47;
+  --warning-dark: #E6D43F;
+
+  /* Semantic */
+  --success: #92D050;
+  --danger: #FF4D4F;
+  --info: #1890FF;
+
+  /* Neutral */
+  --bg-primary: #F8FAFB;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1A2E;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+  --border: #E5E7EB;
+  --border-light: #F3F4F6;
+
+  /* Dark mode */
+  --dark-bg: #0B1929;
+  --dark-card: #132F4C;
+  --dark-border: #1E3A5F;
+
+  /* Background */
+  --background: var(--bg-primary);
+  --foreground: var(--text-primary);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-warning: var(--warning);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-card: var(--dark-card);
+  --color-dark-border: var(--dark-border);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--border-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* KPI数値用フォント */
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes dataflow {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
+/* ダッシュボード用ダークテーマ */
+.dark-dashboard {
+  background: var(--dark-bg);
+  color: #E8F1FF;
+}
+
+/* カード hover効果 */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 43, 76, 0.12);
+}
+
+/* グラデーション背景 */
+.gradient-primary {
+  background: linear-gradient(135deg, #0F2B4C 0%, #1A3D6B 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #00C09A 0%, #33D4B3 100%);
+}
+
+/* ステータスバッジ */
+.badge-success {
+  background: rgba(146, 208, 80, 0.15);
+  color: #5A9E2F;
+  border: 1px solid rgba(146, 208, 80, 0.3);
+}
+
+.badge-warning {
+  background: rgba(255, 236, 71, 0.15);
+  color: #B8971F;
+  border: 1px solid rgba(255, 236, 71, 0.3);
+}
+
+.badge-danger {
+  background: rgba(255, 77, 79, 0.12);
+  color: #CF1322;
+  border: 1px solid rgba(255, 77, 79, 0.25);
+}
+
+.badge-info {
+  background: rgba(24, 144, 255, 0.12);
+  color: #096DD9;
+  border: 1px solid rgba(24, 144, 255, 0.25);
+}
